@@ -1,9 +1,9 @@
 require 'rubygems'
 require 'bundler/setup'
 
-require "bundler/gem_tasks"
+require 'bundler/gem_tasks'
 
-require "rspec/core/rake_task"
+require 'rspec/core/rake_task'
 RSpec::Core::RakeTask.new(:spec)
 task test: :spec
 
@@ -16,4 +16,4 @@ rescue LoadError
   end
 end
 
-task default: [:rubocop, :spec]
+task default: %i[rubocop spec]

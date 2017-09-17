@@ -8,9 +8,9 @@ gem 'yardstick'
 
 group :development, :test do
   gem 'pry'
-  gem 'pry-stack_explorer'
   gem 'pry-byebug'
   gem 'pry-rescue'
+  gem 'pry-stack_explorer'
 
   gem 'gem-release'
   gem 'rubocop', '~> 0.50.0', require: false

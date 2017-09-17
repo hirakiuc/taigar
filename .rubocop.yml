@@ -7,6 +7,11 @@ AllCops:
     - 'features/**/*'
     - 'test/**/*'
 
+FileName:
+  Exclude:
+    - 'Gemfile'
+    - 'Rakefile'
+
 Metrics/ClassLength:
   Max: 150
 

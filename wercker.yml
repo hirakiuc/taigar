@@ -1,0 +1,23 @@
+box: ruby:2.4-jessie
+
+build:
+    steps:
+        - bundle-install:
+            jobs: 4
+        - script:
+            name: echo ruby information
+            code: |
+                echo "ruby version $(ruby --version) running!"
+                echo "from location $(which ruby)"
+                echo -p "gem list: $(gem list)"
+        - script:
+            name: Run Rspec
+            code: bundle exec rake
+    after-steps:
+      - wantedly/pretty-slack-notify:
+            webhook_url: $SLACK_WEBHOOK_URL
+
+deploy:
+    steps:
+        - bundle-install:
+            jobs: 4

@@ -1,5 +1,7 @@
 # Taigar
 
+[![wercker status](https://app.wercker.com/status/1e32d26108123db863a8a218d88c9652/s/master "wercker status")](https://app.wercker.com/project/byKey/1e32d26108123db863a8a218d88c9652)
+
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/taigar`. To experiment with that code, run `bin/console` for an interactive prompt.
 
 TODO: Delete this and the text above, and describe your gem

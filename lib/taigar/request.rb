@@ -1,0 +1,68 @@
+module Taigar
+  module Request
+    protected
+
+    def get_path(path, params = {}, parser = nil, options = {})
+      request(:get, path, params, parser, options)
+    end
+
+    def patch_path(path, params = {}, parser = nil, options = {})
+      request(:patch, path, params, parser, options)
+    end
+
+    def post_path(path, params = {}, parser = nil, options = {})
+      request(:post, path, params, parser, options)
+    end
+
+    def put_path(path, params = {}, parser = nil, options = {})
+      request(:put, path, params, parser, options)
+    end
+
+    def delete_path(path, params = {}, parser = nil, options = {})
+      request(:delete, path, params, parser, options)
+    end
+
+    private
+
+    def request(method, path, params, parser, options)
+      conn = connection(options, parser)
+      configure_authorization(conn)
+
+      response = conn.send(method) do |request|
+        case method.intern
+        when :get, :delete
+          request.body = params.delete('data') if params.key?('data')
+          request.url(adjust_path(conn, path), params)
+        when :post, :put, :patch
+          request.path = adjust_path(conn, path)
+          request.body = extract_data_from_params(params) unless params.empty?
+        else
+          raise ArgumentError, 'unknown http method: ' + method
+        end
+      end
+
+      response.body
+    end
+
+    def adjust_path(conn, path)
+      return path if conn.path_prefix == '/'
+
+      (conn.path_prefix + path).gsub(%r{//}, '/')
+    end
+
+    def configure_authorization(conn)
+      return unless @auth
+
+      # NOTE: This code depend on @auth which is a Struct(:type, :token)
+      conn.authorization(@auth.type, @auth.token)
+    end
+
+    def extract_data_from_params(params)
+      if params.key?('data') && !params['data'].nil?
+        params['data']
+      else
+        params
+      end
+    end
+  end
+end

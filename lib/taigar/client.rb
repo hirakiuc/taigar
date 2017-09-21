@@ -1,6 +1,11 @@
 module Taigar
   class Auth
     attr_accessor :type, :token
+
+    def initialize(type, token)
+      @type = type
+      @token = token
+    end
   end
 
   class Client
@@ -8,14 +13,13 @@ module Taigar
 
     def initialize(options)
       @options = options
-      @auth = Auth.new
+      @auth = nil
     end
 
     def login(username, password)
       api = Taigar::Api::LoginApi.new
       api.login(username, password).tap do |result|
-        @auth.type = :Bearer
-        @auth.token = result.attr(:auth_token)
+        @auth = Auth.new(:Bearer, result.attr(:auth_token))
       end
     end
   end

@@ -2,12 +2,15 @@ module Taigar
   module Api
     class LoginApi < BaseApi
       def login(username, password)
+        params = {
+          type: 'normal',
+          username: username,
+          password: password
+        }
+
         post_path(
-          '/auth', {
-            type: 'normal',
-            username: username,
-            password: password
-          },
+          '/auth',
+          params,
           Taigar::Parser::UserAuthDetailParser
         )
       end

@@ -53,7 +53,6 @@ module Taigar
     def configure_authorization(conn)
       return unless @auth
 
-      # NOTE: This code depend on @auth which is a Struct(:type, :token)
       conn.authorization(@auth.type, @auth.token)
     end
 

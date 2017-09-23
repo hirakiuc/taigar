@@ -2,30 +2,30 @@ module Taigar
   module Request
     protected
 
-    def get_path(path, params = {}, parser = nil, options = {})
-      request(:get, path, params, parser, options)
+    def get_path(path, model_klass, params = {}, options = {})
+      request(:get, path, model_klass, params, options)
     end
 
-    def patch_path(path, params = {}, parser = nil, options = {})
-      request(:patch, path, params, parser, options)
+    def patch_path(path, model_klass, params = {}, options = {})
+      request(:patch, path, model_klass, params, options)
     end
 
-    def post_path(path, params = {}, parser = nil, options = {})
-      request(:post, path, params, parser, options)
+    def post_path(path, model_klass, params = {}, options = {})
+      request(:post, path, model_klass, params, options)
     end
 
-    def put_path(path, params = {}, parser = nil, options = {})
-      request(:put, path, params, parser, options)
+    def put_path(path, model_klass, params = {}, options = {})
+      request(:put, path, model_klass, params, options)
     end
 
-    def delete_path(path, params = {}, parser = nil, options = {})
-      request(:delete, path, params, parser, options)
+    def delete_path(path, model_klass, params = {}, options = {})
+      request(:delete, path, model_klass, params, options)
     end
 
     private
 
-    def request(method, path, params, parser, options)
-      conn = connection(options, parser)
+    def request(method, path, model_klass, params, options)
+      conn = connection(model_klass, options)
       configure_authorization(conn)
 
       response = conn.send(method) do |request|

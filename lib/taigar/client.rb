@@ -19,7 +19,7 @@ module Taigar
     def login(username, password)
       api = Taigar::Api::LoginApi.new
       api.login(username, password).tap do |result|
-        @auth = Auth.new(:Bearer, result.attr(:auth_token))
+        @auth = Auth.new(:Bearer, result.auth_token)
       end
     end
 

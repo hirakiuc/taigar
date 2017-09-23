@@ -29,7 +29,7 @@ module Taigar
 
       return api.get_by_id(params[:id]) if params[:id]
       return api.get_by_slug(params[:slug]) if params[:slug]
-      throw ArgumentError.new("Require id or slug argument")
+      throw ArgumentError.new('Require id or slug argument')
     end
   end
 end

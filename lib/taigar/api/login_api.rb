@@ -11,7 +11,7 @@ module Taigar
         post_path(
           '/auth',
           params,
-          Taigar::Parser::UserAuthDetailParser
+          Taigar::Parser::UserAuthParser
         )
       end
     end

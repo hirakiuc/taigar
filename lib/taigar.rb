@@ -5,6 +5,8 @@ require 'active_support/dependencies/autoload'
 require 'active_support/configurable'
 require 'active_support/inflector'
 
+require 'hashie'
+
 require 'faraday'
 require 'faraday_middleware'
 require 'faraday_middleware/response_middleware'

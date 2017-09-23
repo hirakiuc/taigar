@@ -1,6 +1,6 @@
 module Taigar
   module Model
-    class UserAuthDetail < Base
+    class Severity < Base
     end
   end
 end

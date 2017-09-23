@@ -1,6 +1,6 @@
 module Taigar
   module Model
-    class ProjectDetail < Base
+    class Milestone < Base
     end
   end
 end

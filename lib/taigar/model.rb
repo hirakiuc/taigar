@@ -4,8 +4,19 @@ module Taigar
 
     %i[
       Base
-      UserAuthDetail
-      ProjectDetail
+      EpicStatus
+      IssueStatus
+      IssueType
+      Member
+      Milestone
+      Point
+      Priority
+      Project
+      Role
+      Severity
+      TaskStatus
+      UserAuth
+      UserStoryStatus
     ].each do |klass|
       autoload klass
     end

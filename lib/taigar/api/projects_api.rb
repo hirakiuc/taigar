@@ -5,7 +5,7 @@ module Taigar
         get_path(
           "/projects/#{project_id}",
           {},
-          Taigar::Parser::ProjectDetailParser
+          Taigar::Parser::ProjectParser
         )
       end
 
@@ -13,7 +13,7 @@ module Taigar
         get_path(
           '/projects/by_slug',
           { slug: slug },
-          Taigar::Parser::ProjectDetailParser
+          Taigar::Parser::ProjectParser
         )
       end
     end

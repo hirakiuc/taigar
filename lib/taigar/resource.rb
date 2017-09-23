@@ -1,12 +1,10 @@
 module Taigar
-  module Api
+  module Resource
     extend ActiveSupport::Autoload
 
     %i[
-      BaseApi
-      IssuesApi
-      LoginApi
-      ProjectsApi
+      Base
+      Issues
     ].each do |klass|
       autoload klass
     end

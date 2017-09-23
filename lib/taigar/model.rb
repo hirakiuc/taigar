@@ -5,10 +5,12 @@ module Taigar
     %i[
       Base
       EpicStatus
+      Issue
       IssueStatus
       IssueType
       Member
       Milestone
+      Page
       Point
       Priority
       Project

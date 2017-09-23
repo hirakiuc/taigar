@@ -41,7 +41,11 @@ module Taigar
 
     def stack(model_klass)
       Faraday::RackBuilder.new do |conn|
-        conn.use FaradayMiddleware::Mashify, mash_class: model_klass if model_klass
+        if model_klass
+          conn.use Taigar::Response::Wrapper
+          conn.use FaradayMiddleware::Mashify, mash_class: model_klass
+        end
+
         default_middleware(conn)
       end
     end

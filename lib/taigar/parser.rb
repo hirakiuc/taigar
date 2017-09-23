@@ -5,6 +5,7 @@ module Taigar
     %i[
       BaseParser
       UserAuthDetailParser
+      ProjectDetailParser
     ].each do |klass|
       autoload klass
     end

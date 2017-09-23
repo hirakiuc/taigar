@@ -22,5 +22,14 @@ module Taigar
         @auth = Auth.new(:Bearer, result.attr(:auth_token))
       end
     end
+
+    def project(params)
+      api = Taigar::Api::ProjectsApi.new
+      api.authorization(@auth)
+
+      return api.get_by_id(params[:id]) if params[:id]
+      return api.get_by_slug(params[:slug]) if params[:slug]
+      throw ArgumentError.new('Require id or slug argument')
+    end
   end
 end

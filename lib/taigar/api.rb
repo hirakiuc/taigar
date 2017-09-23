@@ -5,6 +5,7 @@ module Taigar
     %i[
       BaseApi
       LoginApi
+      ProjectsApi
     ].each do |klass|
       autoload klass
     end

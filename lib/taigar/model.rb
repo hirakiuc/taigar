@@ -5,6 +5,7 @@ module Taigar
     %i[
       Base
       UserAuthDetail
+      ProjectDetail
     ].each do |klass|
       autoload klass
     end

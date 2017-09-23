@@ -4,16 +4,16 @@ module Taigar
       def get_by_id(project_id)
         get_path(
           "/projects/#{project_id}",
-          {},
-          Taigar::Parser::ProjectParser
+          Taigar::Model::Project,
+          {}
         )
       end
 
       def get_by_slug(slug)
         get_path(
           '/projects/by_slug',
-          { slug: slug },
-          Taigar::Parser::ProjectParser
+          Taigar::Model::Project,
+          slug: slug
         )
       end
     end

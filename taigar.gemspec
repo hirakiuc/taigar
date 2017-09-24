@@ -25,7 +25,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.add_runtime_dependency 'faraday', '~> 0.13.0'
-  spec.add_runtime_dependency 'faraday_middleware', '~> 0.12.0'
+  spec.add_runtime_dependency 'faraday_middleware', '~> 0.10.0'
   spec.add_runtime_dependency 'activesupport', '~> 5.1.4'
   spec.add_runtime_dependency 'hashie', '~> 3.5.6'
 

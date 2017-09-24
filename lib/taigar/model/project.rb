@@ -14,6 +14,16 @@ module Taigar
       coerce_key :roles, Array[Role]
       coerce_key :priorities, Array[Priority]
       coerce_key :epic_statuses, Array[EpicStatus]
+
+      def issues(params = {})
+        Taigar::Resource::Issues.new(self, params.merge(project: id))
+      end
+
+      private
+
+      def issues_api
+        @issues_api ||= Taigar::Api::IssuesApi.new
+      end
     end
   end
 end

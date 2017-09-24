@@ -3,5 +3,6 @@ module Taigar
     extend ActiveSupport::Autoload
 
     autoload :Handler
+    autoload :Wrapper
   end
 end

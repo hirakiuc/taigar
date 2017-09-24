@@ -51,9 +51,15 @@ module Taigar
     end
 
     def configure_authorization(conn)
-      return unless @auth
+      if Taigar.config.auth
+        auth = Taigar.config.auth
+        conn.authorization(auth.type, auth.token)
+        return
+      end
 
-      conn.authorization(@auth.type, @auth.token)
+      return unless Taigar.config.token
+
+      conn.authorization(:Bearer, Taigar.config.token)
     end
 
     def extract_data_from_params(params)

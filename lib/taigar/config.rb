@@ -1,6 +1,6 @@
 module Taigar
   class Config
     include ActiveSupport::Configurable
-    config_accessor :logger, :token
+    config_accessor :logger, :token, :auth
   end
 end

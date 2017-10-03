@@ -5,6 +5,7 @@ module Taigar
     %i[
       Base
       Issues
+      UserStories
     ].each do |klass|
       autoload klass
     end

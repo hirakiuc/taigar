@@ -18,6 +18,7 @@ module Taigar
       Severity
       TaskStatus
       UserAuth
+      UserStory
       UserStoryStatus
     ].each do |klass|
       autoload klass

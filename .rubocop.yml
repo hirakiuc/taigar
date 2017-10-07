@@ -60,3 +60,9 @@ Metrics/LineLength:
   IgnoredPatterns: [
     '^\s*#'
   ]
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/SafeNavigation:
+  Enabled: false

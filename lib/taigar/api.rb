@@ -7,6 +7,7 @@ module Taigar
       IssuesApi
       LoginApi
       ProjectsApi
+      UserStoriesApi
     ].each do |klass|
       autoload klass
     end

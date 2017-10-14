@@ -4,6 +4,7 @@ module Taigar
 
     %i[
       Base
+      Epics
       Issues
       UserStories
     ].each do |klass|

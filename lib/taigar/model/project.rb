@@ -23,6 +23,10 @@ module Taigar
         Taigar::Resource::UserStories.new(self, params.merge(project: id))
       end
 
+      def epics(params = {})
+        Taigar::Resource::Epics.new(self, params.merge(project: id))
+      end
+
       private
 
       def issues_api

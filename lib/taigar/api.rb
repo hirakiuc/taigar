@@ -4,6 +4,7 @@ module Taigar
 
     %i[
       BaseApi
+      EpicsApi
       IssuesApi
       LoginApi
       ProjectsApi

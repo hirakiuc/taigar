@@ -5,6 +5,7 @@ module Taigar
     %i[
       Base
       EpicStatus
+      Epic
       Issue
       IssueStatus
       IssueType

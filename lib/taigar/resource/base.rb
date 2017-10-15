@@ -23,7 +23,7 @@ module Taigar
       end
 
       def create_api(name)
-        ApiFactory.create_instance(name)
+        ApiFactory.create_instance(*name.split('::'))
       end
     end
   end

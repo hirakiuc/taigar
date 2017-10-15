@@ -8,6 +8,14 @@ module Taigar
           params
         )
       end
+
+      def get_by_id(id, params)
+        get_path(
+          "/userstories/#{id}",
+          Taigar::Model::UserStory,
+          params
+        )
+      end
     end
   end
 end

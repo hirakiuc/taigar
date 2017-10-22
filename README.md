@@ -24,7 +24,34 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+require 'taigar'
+
+taiga = Taigar.new
+taiga.login(ENV['TAIGA_USER'], ENV['TAIGA_PASSWORD'])
+
+project = taiga.project(slug: 'yourprj')
+
+#  Support listing issues in the project.
+type = project.issue_types.select {|issue_type| issue_type.name == 'Bug' }.first
+
+project.issues(type: type.id, order_by: '-created_date').each do |issue|
+  puts "#{issue.id}: #{issue.subject}"
+end
+
+# Support listing UserStories in the project.
+project.user_stories.take(10).eaco do |user_story|
+  puts user_story
+end
+
+# Support listing Epics in the project.
+project.epics.each do |epic|
+  # Support listing UserStories in the epic.
+  epic.user_stories.map(&:target_user_story).each do |user_story|
+    puts user_story
+  end
+end
+```
 
 ## Development
 

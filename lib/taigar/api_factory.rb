@@ -5,7 +5,7 @@ module Taigar
         klass_name = args.pop
 
         ns =
-          if args.size > 0
+          if !args.size.empty?
             resolve_namespace(::Taigar::Api, args)
           else
             ::Taigar::Api

@@ -10,5 +10,15 @@ module Taigar
     ].each do |klass|
       autoload klass
     end
+
+    class Epics
+      extend ActiveSupport::Autoload
+
+      %i[
+        RelatedUserStories
+      ].each do |klass|
+        autoload klass
+      end
+    end
   end
 end

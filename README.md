@@ -40,7 +40,7 @@ project.issues(type: type.id, order_by: '-created_date').each do |issue|
 end
 
 # Support listing UserStories in the project.
-project.user_stories.take(10).eaco do |user_story|
+project.user_stories.take(10).each do |user_story|
   puts user_story
 end
 

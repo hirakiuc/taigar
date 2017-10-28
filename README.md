@@ -1,6 +1,8 @@
 # Taigar
 
 [![wercker status](https://app.wercker.com/status/1e32d26108123db863a8a218d88c9652/s/master "wercker status")](https://app.wercker.com/project/byKey/1e32d26108123db863a8a218d88c9652)
+[![Maintainability](https://api.codeclimate.com/v1/badges/9a38e58b060a9ed7127a/maintainability)](https://codeclimate.com/github/hirakiuc/taigar/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/9a38e58b060a9ed7127a/test_coverage)](https://codeclimate.com/github/hirakiuc/taigar/test_coverage)
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/taigar`. To experiment with that code, run `bin/console` for an interactive prompt.
 

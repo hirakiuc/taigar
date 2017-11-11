@@ -18,4 +18,6 @@ end
 
 group :test do
   gem 'simplecov', require: false
+  gem 'rspec-mocks'
+  gem 'webmock'
 end

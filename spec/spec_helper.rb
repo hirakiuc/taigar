@@ -1,6 +1,9 @@
 require "bundler/setup"
 require "taigar"
 
+require 'rspec'
+require 'webmock/rspec'
+
 require 'simplecov'
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::HTMLFormatter
